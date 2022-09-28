@@ -17,14 +17,15 @@ class MainActivity : AppCompatActivity() {
     private val binding get() = _binding as ActivityMainBinding
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
     private lateinit var drawerLayout: DrawerLayout
+
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         //  Set ActionBar with Toolbar
 //        setSupportActionBar(binding.includeAppbarMain.mainToolbar)
 
@@ -33,9 +34,8 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(it, "Hello There, Nice to Meet Ya", Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
         }
-
         //  Variable setups
-        val drawerLayout: DrawerLayout = binding.parentDrawerLayout
+        drawerLayout = binding.parentDrawerLayout
         val navDrawer: NavigationView = binding.navDrawer
         //  Navigation Controller
         val navController = findNavController(R.id.nav_host_fragment_content_main)
